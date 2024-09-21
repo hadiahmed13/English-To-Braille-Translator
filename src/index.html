@@ -6,21 +6,20 @@ from src.translator import translate_braille_to_english<!DOCTYPE html>
         <title>English to Braille Translator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.9.1/core.css">
+        <script type="module" src="https://pyscript.net/releases/2024.9.1/core.js"></script>
     </head>
     <body>
         <h1>English to Braille Translator</h1>
 
-        <button id="run_button">Run Script</button>
-        <p id="output"></p>
+        <label for ="input-text">Enter English</label>
+        <textarea id = "input_text" rows = "7" cols ="70" placeholder = "Translate english text into braille"></textarea>
 
-        <!-- Load the external Python script -->
-        <py-script>
-            # Import the braille_translator function from the external script
-        </py-script>
+        <button id="run_button" py-click="translate_english">Run Script</button>
+        <div class ="output" id ="output"></div>
 
-        <py-script>
+        <script type="py" src="./update.py" config = "../pyscript.json"></script>
+        <!-- <py-script>
             def update_output():
                 # Call function from the external script
                 result = braille_translator("sample input")
@@ -28,6 +27,6 @@ from src.translator import translate_braille_to_english<!DOCTYPE html>
 
             # Link button click to function
             Element("run_button").element.onclick = update_output
-        </py-script>
+        </py-script> -->
     </body>
 </html>
