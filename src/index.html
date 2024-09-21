@@ -1,16 +1,33 @@
-<!DOCTYPE html>
+from src.translator import translate_braille_to_english<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>English to Braille Translator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
-        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     </head>
     <body>
-        <script src="./translator.py"></script>
+        <h1>English to Braille Translator</h1>
+
+        <button id="run_button">Run Script</button>
+        <p id="output"></p>
+
+        <!-- Load the external Python script -->
+        <py-script>
+            # Import the braille_translator function from the external script
+        </py-script>
+
+        <py-script>
+            def update_output():
+                # Call function from the external script
+                result = braille_translator("sample input")
+                Element("output").element.innerHTML = result
+
+            # Link button click to function
+            Element("run_button").element.onclick = update_output
+        </py-script>
     </body>
 </html>
